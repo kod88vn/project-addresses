@@ -12,7 +12,6 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { AngularInfoComponent } from './pages/angular-info/angular-info.component';
 import { AddressesPage } from './pages/addresses/addresses.page';
 import { AddressesComponent } from './components/addresses/addresses.component';
-import { CounterComponent } from './components/counter/counter.component';
 import { MaterialModule } from './material.module';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { MaterialModule } from './material.module';
     PageNotFoundComponent,
     AngularInfoComponent,
     AddressesComponent,
-    CounterComponent,
     AddressesPage
   ],
   imports: [
@@ -37,6 +35,7 @@ import { MaterialModule } from './material.module';
     FormsModule,
     ReactiveFormsModule
   ],
+  exports:[ MaterialModule ],
   providers: [],
   bootstrap: [AppComponent]
 })

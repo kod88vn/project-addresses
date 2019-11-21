@@ -1,4 +1,3 @@
-import { element } from 'protractor';
 import { Component, OnInit, AfterViewInit, ViewChild, ViewChildren, Input } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -15,7 +14,7 @@ import { AddressesService } from 'src/app/services/addresses.service';
 })
 export class AddressesComponent implements OnInit, AfterViewInit {
   @Input() addresses: any;
-  dataSource: any;
+  dataSource: any = [];
   tableProps : { label: String; prop: String; }[];
   displayedColumns: string[] = ['streetNumber', 'streetName', 'city', 'zipCode', 'state'];
   resultsLength = 0;

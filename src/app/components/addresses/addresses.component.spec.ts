@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
+import { MaterialModule } from '@app/material.module';
 import { AddressesComponent } from './addresses.component';
+import { AddressesService } from 'src/app/services/addresses.service';
+import { HttpClient } from '@angular/common/http';
 
 describe('AddressesComponent', () => {
   let component: AddressesComponent;
@@ -8,7 +12,9 @@ describe('AddressesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddressesComponent ]
+      imports: [ MaterialModule, FormsModule ],
+      providers: [ HttpClient, AddressesService],
+      declarations: [ AddressesComponent ],
     })
     .compileComponents();
   }));

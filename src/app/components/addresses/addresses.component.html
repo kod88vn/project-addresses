@@ -14,66 +14,9 @@
             [(ngModel)]="element[p.prop]">
         </td>
     </ng-container>
-  <!-- <ng-container matColumnDef="streetNumber">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
-    <td mat-cell *matCellDef="let element; let i = index">
-        <span (click)="onClick(i, 'streetNumber', element)" class="cursor-pointer" *ngIf="!(foco && foco.row === i && foco.field === 'streetNumber')">{{element.streetNumber}}</span>
-        <input
-          #input
-          *ngIf="foco && foco.row === i && foco.field === 'streetNumber'"
-          (focusout)="onFocusOut(element)"
-          [(ngModel)]="element.streetNumber">
-      </td>
-  </ng-container>
-  <ng-container matColumnDef="streetName">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-    <td mat-cell *matCellDef="let element; let i = index">
-      <span (click)="onClick(i, 'streetName', element)" class="cursor-pointer" *ngIf="!(foco && foco.row === i && foco.field === 'streetName')">{{element.streetName}}</span>
-      <input
-        #input
-        *ngIf="foco && foco.row === i && foco.field === 'streetName'"
-        (focusout)="onFocusOut(element)"
-        [(ngModel)]="element.streetName">
-    </td>
-  </ng-container>
-  <ng-container matColumnDef="city">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
-    <td mat-cell *matCellDef="let element; let i = index">
-      <span (click)="onClick(i, 'city', element)" class="cursor-pointer" *ngIf="!(foco && foco.row === i && foco.field === 'city')">{{element.city}}</span>
-      <input
-        #input
-        *ngIf="foco && foco.row === i && foco.field === 'city'"
-        (focusout)="onFocusOut(element)"
-        [(ngModel)]="element.city">
-    </td>
-  </ng-container>
-  <ng-container matColumnDef="zipCode">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Zip Code </th>
-    <td mat-cell *matCellDef="let element; let i = index">
-      <span (click)="onClick(i, 'zipCode', element)" class="cursor-pointer" *ngIf="!(foco && foco.row === i && foco.field === 'zipCode')">{{element.zipCode}}</span>
-      <input
-        #input
-        *ngIf="foco && foco.row === i && foco.field === 'zipCode'"
-        (focusout)="onFocusOut(element)"
-        [(ngModel)]="element.zipCode">
-    </td>
-  </ng-container>
-  <ng-container matColumnDef="state">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> State </th>
-    <td mat-cell *matCellDef="let element; let i = index">
-      <span (click)="onClick(i, 'state', element)" class="cursor-pointer" *ngIf="!(foco && foco.row === i && foco.field === 'state')">{{element.state}}</span>
-      <input
-        #input
-        *ngIf="foco && foco.row === i && foco.field === 'state'"
-        (focusout)="onFocusOut(element)"
-        [(ngModel)]="element.state">
-    </td>
-  </ng-container> -->
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
 <mat-paginator [length]="resultsLength" [pageSizeOptions]="[10, 30, 50]" showFirstLastButtons></mat-paginator>
-
-<!-- {{ arrayChanges | json}} -->
