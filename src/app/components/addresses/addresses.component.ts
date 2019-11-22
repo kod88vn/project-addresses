@@ -13,7 +13,7 @@ import { AddressesService } from 'src/app/services/addresses.service';
   providers: [AddressesService]
 })
 export class AddressesComponent implements OnInit, AfterViewInit {
-  @Input() addresses: any;
+  @Input() addresses: any = [];
   dataSource: any = [];
   tableProps : { label: String; prop: String; }[];
   displayedColumns: string[] = ['streetNumber', 'streetName', 'city', 'zipCode', 'state'];
