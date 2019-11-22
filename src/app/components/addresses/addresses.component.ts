@@ -26,6 +26,7 @@ export class AddressesComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChildren('input') inputs;
+  sortChanges: any;
 
   constructor(private addressesService: AddressesService) { }
 
@@ -65,7 +66,7 @@ export class AddressesComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     // If the user changes the sort order, reset back to the first page.
-    this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
+    this.sortChanges = this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
 
     merge(this.sort.sortChange, this.paginator.page)
       .pipe(startWith(null))
@@ -99,5 +100,9 @@ export class AddressesComponent implements OnInit, AfterViewInit {
     this.arrayChanges = Object.keys(this.changes).map(i => this.changes[i]);
     this.foco = null;
     this.addressesService.saveAddress(element)
+  }
+
+  ngOnDestroy() {
+    this.sortChanges.unsubscribe();
   }
 }
